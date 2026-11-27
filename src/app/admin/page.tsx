@@ -109,40 +109,16 @@ export default function AdminPage() {
       .catch(() => setAuthed(false));
   }, []);
 
-  async function requestOtp(emailInput: string) {
+  async function login(emailInput: string, password: string) {
     setLoginError("");
-    const res = await fetch("/api/admin/login/request-otp", {
+    const res = await fetch("/api/admin/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: emailInput }),
-    });
-    const data = (await res.json()) as {
-      ok?: boolean;
-      error?: string;
-      message?: string;
-      debugOtp?: string;
-    };
-    if (!res.ok) {
-      setLoginError(data.error || "Could not send login code.");
-      return { ok: false as const };
-    }
-    return {
-      ok: true as const,
-      message: data.message,
-      debugOtp: data.debugOtp,
-    };
-  }
-
-  async function verifyOtp(emailInput: string, otp: string) {
-    setLoginError("");
-    const res = await fetch("/api/admin/login/verify-otp", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: emailInput, otp }),
+      body: JSON.stringify({ email: emailInput, password }),
     });
     const data = (await res.json()) as { error?: string };
     if (!res.ok) {
-      setLoginError(data.error || "Invalid code.");
+      setLoginError(data.error || "Invalid email or password.");
       return;
     }
     await loadAll();
@@ -251,7 +227,7 @@ export default function AdminPage() {
 
   if (!authed) {
     return (
-      <AdminLogin onRequestOtp={requestOtp} onVerifyOtp={verifyOtp} error={loginError} />
+      <AdminLogin onLogin={login} error={loginError} />
     );
   }
 

@@ -22,19 +22,14 @@ Open http://localhost:3000.
 
 Run these SQL files in the Supabase SQL editor (in order):
 
-1. `supabase/admin_users.sql`
-2. `supabase/popular_routes.sql` (+ `popular_routes_migration.sql` if upgrading)
-3. `supabase/popular_routes_seed.sql` (optional seed)
-4. `supabase/tourism.sql`
-5. `supabase/reviews.sql`
-6. `supabase/enquiries_bookings.sql`
-7. `supabase/storage.sql`
+1. `supabase/popular_routes.sql` (+ `popular_routes_migration.sql` if upgrading)
+2. `supabase/popular_routes_seed.sql` (optional seed)
+3. `supabase/tourism.sql`
+4. `supabase/reviews.sql`
+5. `supabase/enquiries_bookings.sql`
+6. `supabase/storage.sql`
 
-Then seed admin (optional):
-
-```bash
-npm run seed:admin
-```
+Admin login uses `ADMIN_EMAIL` and `ADMIN_PASSWORD` from the environment. It does not use a database table.
 
 ## Deploy on Vercel
 
@@ -61,6 +56,8 @@ In **Project → Settings → Environment Variables**, add for **Production** (a
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Yes | Supabase anon/public key |
 | `SUPABASE_SERVICE_ROLE_KEY` | Yes | Server-only; never expose to client |
 | `ADMIN_SESSION_SECRET` | Recommended | Long random string for admin cookies |
+| `ADMIN_EMAIL` | Yes | Admin login email |
+| `ADMIN_PASSWORD` | Yes | Admin login password |
 
 Do **not** commit `.env.local` — set these only in Vercel.
 
@@ -72,7 +69,7 @@ Click **Deploy**. After build succeeds, your site is live at `https://your-proje
 
 - Home, Book, Tourism, Contact pages load
 - WhatsApp links work (`src/lib/site.ts` phone number)
-- Admin login at `/admin` (after Supabase + admin user is seeded)
+- Admin login at `/admin` (email and password from env)
 - Upload route/tourism images in admin (requires `storage.sql` bucket)
 
 ## Scripts
@@ -82,7 +79,6 @@ Click **Deploy**. After build succeeds, your site is live at `https://your-proje
 | `npm run dev` | Local dev server |
 | `npm run build` | Production build (same as Vercel) |
 | `npm run start` | Run production build locally |
-| `npm run seed:admin` | Create admin user in Supabase |
 | `npm run seed:routes` | Seed popular routes |
 
 ## Notes

@@ -1,4 +1,26 @@
 import type { NextConfig } from "next";
+import { otherPagesEnabled } from "./src/lib/site-launch";
+
+const pausedPages = otherPagesEnabled
+  ? []
+  : [
+      "/about",
+      "/about/:path*",
+      "/our-services",
+      "/our-services/:path*",
+      "/packages",
+      "/packages/:path*",
+      "/contact",
+      "/contact/:path*",
+      "/tourism",
+      "/tourism/:path*",
+      "/hotels",
+      "/hotels/:path*",
+    ].map((source) => ({
+      source,
+      destination: "/",
+      permanent: false,
+    }));
 
 const nextConfig: NextConfig = {
   images: {
@@ -18,9 +40,10 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/how-it-works",
-        destination: "/our-services",
-        permanent: true,
+        destination: otherPagesEnabled ? "/our-services" : "/",
+        permanent: false,
       },
+      ...pausedPages,
     ];
   },
 };

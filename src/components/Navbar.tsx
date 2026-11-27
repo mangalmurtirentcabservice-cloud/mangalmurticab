@@ -16,6 +16,7 @@ import {
   isNavActive,
   mainNavLinks,
 } from "@/lib/site-nav";
+import { otherPagesEnabled } from "@/lib/site-launch";
 import { site } from "@/lib/site";
 import { useT } from "@/lib/i18n";
 import { useAdminChrome } from "@/lib/admin-chrome";
@@ -96,17 +97,20 @@ export default function Navbar() {
           <div
             ref={aboutRef}
             className="relative"
-            onMouseEnter={() => setAboutDesktopOpen(true)}
+            onMouseEnter={() => otherPagesEnabled && setAboutDesktopOpen(true)}
             onMouseLeave={() => setAboutDesktopOpen(false)}
           >
             <button
               type="button"
-              aria-expanded={aboutDesktopOpen}
-              aria-haspopup="true"
-              onClick={() => setAboutDesktopOpen((v) => !v)}
+              aria-expanded={otherPagesEnabled && aboutDesktopOpen}
+              aria-haspopup={otherPagesEnabled ? "true" : undefined}
+              aria-disabled={!otherPagesEnabled}
+              disabled={!otherPagesEnabled}
+              onClick={() => otherPagesEnabled && setAboutDesktopOpen((v) => !v)}
               className={clsx(
                 "nav-link inline-flex items-center gap-1",
-                aboutActive && "nav-link-active"
+                !otherPagesEnabled && "cursor-not-allowed opacity-40",
+                otherPagesEnabled && aboutActive && "nav-link-active"
               )}
             >
               {t("nav.about")}
@@ -119,7 +123,7 @@ export default function Navbar() {
             </button>
 
             <AnimatePresence>
-              {aboutDesktopOpen && (
+              {otherPagesEnabled && aboutDesktopOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -148,6 +152,19 @@ export default function Navbar() {
 
           {mainNavLinks.slice(1).map((link) => {
             const active = isNavActive(pathname, link.href);
+            if (!otherPagesEnabled) {
+              return (
+                <button
+                  key={link.href}
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                  className="nav-link cursor-not-allowed opacity-40"
+                >
+                  {t(link.labelKey)}
+                </button>
+              );
+            }
             return (
               <Link
                 key={link.href}
@@ -223,19 +240,22 @@ export default function Navbar() {
 
               <button
                 type="button"
-                onClick={() => setAboutOpen((v) => !v)}
+                disabled={!otherPagesEnabled}
+                aria-disabled={!otherPagesEnabled}
+                onClick={() => otherPagesEnabled && setAboutOpen((v) => !v)}
                 className={clsx(
                   "flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-colors",
-                  aboutActive
+                  !otherPagesEnabled && "cursor-not-allowed opacity-40",
+                  otherPagesEnabled && aboutActive
                     ? "bg-brand/[0.08] text-brand"
-                    : "text-navy/70 hover:bg-soft hover:text-navy"
+                    : otherPagesEnabled && "text-navy/70 hover:bg-soft hover:text-navy"
                 )}
               >
                 {t("nav.about")}
                 <ChevronDown className={clsx("h-4 w-4 transition-transform", aboutOpen && "rotate-180")} />
               </button>
 
-              {aboutOpen && (
+              {otherPagesEnabled && aboutOpen && (
                 <div className="ml-2 flex flex-col gap-0.5 border-l-2 border-brand/15 pl-3">
                   {aboutNavLinks.map((link) => (
                     <Link
@@ -256,6 +276,17 @@ export default function Navbar() {
 
               {mainNavLinks.slice(1).map((link) => {
                 const active = isNavActive(pathname, link.href);
+                if (!otherPagesEnabled) {
+                  return (
+                    <span
+                      key={link.href}
+                      aria-disabled="true"
+                      className="cursor-not-allowed rounded-xl px-4 py-3 text-sm font-semibold text-navy/35"
+                    >
+                      {t(link.labelKey)}
+                    </span>
+                  );
+                }
                 return (
                   <Link
                     key={link.href}

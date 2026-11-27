@@ -1,7 +1,10 @@
 import { createHmac, timingSafeEqual } from "crypto";
 import type { NextRequest } from "next/server";
-import { createAdminClient, isSupabaseConfigured } from "@/lib/supabase/admin";
-import { normalizeAdminEmail } from "@/lib/admin-otp";
+import { isSupabaseConfigured } from "@/lib/supabase/admin";
+
+export function normalizeAdminEmail(email: string) {
+  return email.trim().toLowerCase();
+}
 
 const COOKIE_TOKEN = "pc_admin";
 const COOKIE_EMAIL = "pc_admin_email";
@@ -49,37 +52,6 @@ export function makeAdminToken(email: string) {
 
 export function adminConfigured() {
   return isSupabaseConfigured() && Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY);
-}
-
-/** Email must be in admin_users or match ADMIN_EMAIL env allowlist. */
-export async function isAllowedAdminEmail(email: string) {
-  const normalized = normalizeAdminEmail(email);
-  if (!normalized || !normalized.includes("@")) return false;
-
-  const envEmail = process.env.ADMIN_EMAIL?.trim().toLowerCase();
-  if (envEmail && safeEqual(normalized, envEmail)) {
-    return true;
-  }
-
-  if (isSupabaseConfigured() && process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    try {
-      const supabase = createAdminClient();
-      const { data, error } = await supabase
-        .from("admin_users")
-        .select("email")
-        .eq("email", normalized)
-        .maybeSingle();
-
-      if (error) {
-        console.error("[admin otp] allowlist error:", error.message);
-      }
-      if (data?.email) return true;
-    } catch (err) {
-      console.error("[admin otp] allowlist client error:", err);
-    }
-  }
-
-  return false;
 }
 
 export function isAdminRequest(request: NextRequest) {

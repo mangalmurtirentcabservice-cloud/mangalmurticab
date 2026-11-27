@@ -5,6 +5,7 @@ import Container from "./Container";
 import Logo from "./Logo";
 import SocialIcon, { type SocialName } from "./SocialIcon";
 import { aboutNavLinks } from "@/lib/site-nav";
+import { otherPagesEnabled } from "@/lib/site-launch";
 import { useT, type MessageKey } from "@/lib/i18n";
 import { formatWhatsApp } from "@/lib/site";
 import { useSite } from "@/lib/site-context";
@@ -109,22 +110,38 @@ export default function Footer() {
             <div key={col.titleKey} className="min-w-0">
               <h3 className="text-sm font-bold tracking-tight text-brand">{t(col.titleKey)}</h3>
               <ul className="mt-3 space-y-2">
-                {col.links.map((link) => (
-                  <li key={`${col.titleKey}-${link.href}-${link.labelKey}`}>
-                    <Link href={link.href} className="text-sm text-white/70 hover:text-white">
-                      {t(link.labelKey)}
-                    </Link>
-                  </li>
-                ))}
+                {col.links.map((link) => {
+                  const staysOnHome = link.href === "/" || link.href.startsWith("/#");
+                  const live = otherPagesEnabled || staysOnHome;
+                  return (
+                    <li key={`${col.titleKey}-${link.href}-${link.labelKey}`}>
+                      {live ? (
+                        <Link href={link.href} className="text-sm text-white/70 hover:text-white">
+                          {t(link.labelKey)}
+                        </Link>
+                      ) : (
+                        <span aria-disabled="true" className="cursor-not-allowed text-sm text-white/35">
+                          {t(link.labelKey)}
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
         </div>
 
         <p className="mt-8 border-t border-white/10 pt-5 text-sm text-white/50">
-          <a href="/about/terms" className="hover:text-white">
-            {t("footer.terms")}
-          </a>
+          {otherPagesEnabled ? (
+            <a href="/about/terms" className="hover:text-white">
+              {t("footer.terms")}
+            </a>
+          ) : (
+            <span aria-disabled="true" className="cursor-not-allowed text-white/35">
+              {t("footer.terms")}
+            </span>
+          )}
           <span className="mx-2 text-white/25">·</span>
           {t("footer.copyright")}
         </p>

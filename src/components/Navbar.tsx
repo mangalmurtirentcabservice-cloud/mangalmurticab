@@ -84,7 +84,7 @@ export default function Navbar() {
           <Logo size="nav" />
         </Link>
 
-        <nav className="hidden min-w-0 flex-nowrap items-center justify-center gap-0 justify-self-center xl:flex">
+        <nav className="hidden w-full min-w-0 flex-nowrap items-center justify-evenly justify-self-stretch xl:flex">
           <Link
             href="/"
             aria-current={pathname === "/" ? "page" : undefined}

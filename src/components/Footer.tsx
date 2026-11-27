@@ -51,7 +51,6 @@ export default function Footer() {
       links: [
         { labelKey: "nav.packages", href: "/packages" },
         { labelKey: "nav.ourServices", href: "/our-services" },
-        { labelKey: "nav.touristPlaces", href: "/tourism" },
         { labelKey: "nav.contactUs", href: "/contact" },
       ],
     },

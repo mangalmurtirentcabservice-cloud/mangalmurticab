@@ -6,7 +6,6 @@ export const aboutNavLinks: { href: string; labelKey: MessageKey }[] = [
   { href: "/about/testimonials", labelKey: "nav.testimonials" },
   { href: "/about/faq", labelKey: "nav.faq" },
   { href: "/about/blog", labelKey: "nav.blog" },
-  { href: "/about/career", labelKey: "nav.career" },
   { href: "/about/terms", labelKey: "nav.terms" },
   { href: "/about/safety", labelKey: "nav.safety" },
 ];
@@ -14,7 +13,6 @@ export const aboutNavLinks: { href: string; labelKey: MessageKey }[] = [
 export const mainNavLinks: { href: string; labelKey: MessageKey }[] = [
   { href: "/", labelKey: "nav.home" },
   { href: "/our-services", labelKey: "nav.ourServices" },
-  { href: "/tourism", labelKey: "nav.touristPlaces" },
   { href: "/packages", labelKey: "nav.packages" },
   { href: "/contact", labelKey: "nav.contactUs" },
 ];

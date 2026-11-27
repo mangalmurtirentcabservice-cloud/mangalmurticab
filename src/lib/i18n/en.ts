@@ -29,14 +29,14 @@ export const en = {
   "footer.col.about": "About",
   "footer.terms": "Terms and Conditions",
   "footer.copyright": "© 2026 Mangalmurti Tours & Travels",
-  "footer.route.mumbaiPune": "Kolhapur → Pune",
-  "footer.route.nashikPune": "Kolhapur → Mumbai",
-  "footer.route.puneGoa": "Pune → Goa",
-  "footer.route.puneLonavala": "Pune → Lonavala",
-  "footer.dest.pune": "Pune",
+  "footer.route.mumbaiPune": "Kolhapur → Mumbai",
+  "footer.route.nashikPune": "Kolhapur → Pune",
+  "footer.route.puneGoa": "Kolhapur → Goa",
+  "footer.route.puneLonavala": "Pune → Mumbai",
+  "footer.dest.pune": "Kolhapur",
   "footer.dest.mumbai": "Mumbai",
-  "footer.dest.nashik": "Nashik",
-  "footer.dest.mahabaleshwar": "Mahabaleshwar",
+  "footer.dest.nashik": "Belgaum",
+  "footer.dest.mahabaleshwar": "Goa",
   "footer.social.whatsapp": "WhatsApp",
   "footer.social.instagram": "Instagram",
   "footer.social.facebook": "Facebook",
@@ -188,6 +188,7 @@ export const en = {
   "bookForm.error.phone": "Enter a valid 10-digit mobile number.",
   "bookForm.error.pickup": "Enter pickup location.",
   "bookForm.error.drop": "Enter drop location.",
+  "bookForm.error.route": "Choose a pickup and drop from the route list.",
   "bookForm.error.date": "Pick a travel date.",
   "bookForm.error.passengers": "Passengers must be between 1 and 150.",
 
@@ -426,7 +427,7 @@ export const en = {
 
   "services.cta.title": "Ready for the road?",
   "services.cta.desc":
-    "Search a route, pick your cab, and travel with Mangalmurti Tours & Travels — Pune to Mumbai, Nashik, Goa, and beyond.",
+    "Search a route, pick your cab, and travel with Mangalmurti Tours & Travels — Kolhapur, Mumbai, Pune, Belgaum, Solapur, and Goa.",
 
   "route.fleetRange": "Hatchback to Innova",
   "route.bookThis": "Book this route →",

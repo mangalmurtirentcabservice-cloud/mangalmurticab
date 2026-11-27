@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import Container from "./Container";
 import { usePopularRoutes } from "@/hooks/usePopularRoutes";
 import defaultRoutes from "@/data/default-routes.json";
-import { touristPlaces } from "@/data/tourist-places";
 import type { PopularRoute } from "@/lib/popular-routes";
 import { mergeRoutesWithDefaults } from "@/lib/popular-routes";
 import { useT } from "@/lib/i18n";
@@ -28,10 +27,6 @@ function buildLocations(routes: PopularRoute[]): LocationChip[] {
 
   for (const route of routes) {
     push(route.fromCity, route.toCity);
-  }
-
-  for (const place of touristPlaces) {
-    push("Pune", place.name);
   }
 
   return out;

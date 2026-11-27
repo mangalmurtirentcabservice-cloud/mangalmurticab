@@ -17,7 +17,7 @@ values (
   '+91 95959 33899',
   'mangalmurtirentcabservice@gmail.com',
   '917875381736',
-  'https://www.instagram.com/mangalmurticab',
+  '#',
   'Kalamba, Kolhapur, Maharashtra, 416007',
   'Kalamba, Kolhapur',
   'Kolhapur, Maharashtra'

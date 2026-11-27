@@ -62,8 +62,15 @@ export default function CityCombobox({
 
   useEffect(() => {
     if (!open || !listRef.current) return;
-    const el = listRef.current.querySelector<HTMLElement>(`[data-index="${highlight}"]`);
-    el?.scrollIntoView({ block: "nearest" });
+    const menu = listRef.current;
+    const el = menu.querySelector<HTMLElement>(`[data-index="${highlight}"]`);
+    if (!el) return;
+    const top = el.offsetTop;
+    const bottom = top + el.offsetHeight;
+    if (top < menu.scrollTop) menu.scrollTop = top;
+    else if (bottom > menu.scrollTop + menu.clientHeight) {
+      menu.scrollTop = bottom - menu.clientHeight;
+    }
   }, [highlight, open]);
 
   function pick(city: string) {
@@ -99,7 +106,12 @@ export default function CityCombobox({
   return (
     <div
       ref={rootRef}
-      className={clsx("city-combobox", isForm ? "city-combobox--form" : "city-combobox--inline", className)}
+      className={clsx(
+        "city-combobox",
+        open && "city-combobox-open",
+        isForm ? "city-combobox--form" : "city-combobox--inline",
+        className
+      )}
     >
       <div className="city-combobox-control">
         <input

@@ -393,7 +393,8 @@
   z-index: 1;
 }
 
-.book-cab-field:focus-within {
+.book-cab-field:focus-within,
+.book-cab-field:has(.city-combobox-open) {
   z-index: 40;
 }
 
@@ -461,6 +462,10 @@
   position: relative;
   width: 100%;
   min-width: 0;
+}
+
+.city-combobox-open {
+  z-index: 40;
 }
 
 .city-combobox-control {

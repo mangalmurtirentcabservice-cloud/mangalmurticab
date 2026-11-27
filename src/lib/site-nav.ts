@@ -3,7 +3,6 @@ import type { MessageKey } from "@/lib/i18n/en";
 export const aboutNavLinks: { href: string; labelKey: MessageKey }[] = [
   { href: "/about", labelKey: "nav.about" },
   { href: "/about/fleet", labelKey: "nav.fleet" },
-  { href: "/hotels", labelKey: "nav.hotelsFlights" },
   { href: "/about/testimonials", labelKey: "nav.testimonials" },
   { href: "/about/faq", labelKey: "nav.faq" },
   { href: "/about/blog", labelKey: "nav.blog" },

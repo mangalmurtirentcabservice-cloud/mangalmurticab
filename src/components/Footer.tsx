@@ -11,9 +11,8 @@ import { useSite } from "@/lib/site-context";
 
 const socialDefs: { name: SocialName; labelKey: MessageKey; href: (s: ReturnType<typeof useSite>) => string }[] = [
   { name: "whatsapp", labelKey: "footer.social.whatsapp", href: (s) => s.whatsappHref },
-  { name: "instagram", labelKey: "footer.social.instagram", href: (s) => s.instagram },
+  { name: "instagram", labelKey: "footer.social.instagram", href: () => "#" },
   { name: "facebook", labelKey: "footer.social.facebook", href: () => "#" },
-  { name: "youtube", labelKey: "footer.social.youtube", href: () => "#" },
 ];
 
 export default function Footer() {

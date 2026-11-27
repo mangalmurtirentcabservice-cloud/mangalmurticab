@@ -132,6 +132,12 @@ export default function BookCabForm({
     }
     if (from.trim().length < 2) return t("bookForm.error.pickup");
     if (to.trim().length < 2) return t("bookForm.error.drop");
+    const pairOk = routes.some(
+      (route) =>
+        route.fromCity.toLowerCase() === from.trim().toLowerCase() &&
+        route.toCity.toLowerCase() === to.trim().toLowerCase()
+    );
+    if (!pairOk) return t("bookForm.error.route");
     if (!date) return t("bookForm.error.date");
     const passengerCount = Number(passengers);
     if (passengers && (!Number.isFinite(passengerCount) || passengerCount < 1 || passengerCount > 150)) {

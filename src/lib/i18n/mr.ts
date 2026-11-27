@@ -30,14 +30,14 @@ export const mr: Record<MessageKey, string> = {
   "footer.col.about": "आमच्याबद्दल",
   "footer.terms": "अटी व शर्ती",
   "footer.copyright": "© 2026 मंगलमूर्ती टूर्स अँड ट्रॅव्हल्स",
-  "footer.route.mumbaiPune": "कोल्हापूर → पुणे",
-  "footer.route.nashikPune": "कोल्हापूर → मुंबई",
-  "footer.route.puneGoa": "पुणे → गोवा",
-  "footer.route.puneLonavala": "पुणे → लोणावळा",
-  "footer.dest.pune": "पुणे",
+  "footer.route.mumbaiPune": "कोल्हापूर → मुंबई",
+  "footer.route.nashikPune": "कोल्हापूर → पुणे",
+  "footer.route.puneGoa": "कोल्हापूर → गोवा",
+  "footer.route.puneLonavala": "पुणे → मुंबई",
+  "footer.dest.pune": "कोल्हापूर",
   "footer.dest.mumbai": "मुंबई",
-  "footer.dest.nashik": "नाशिक",
-  "footer.dest.mahabaleshwar": "महाबळेश्वर",
+  "footer.dest.nashik": "बेळगाव",
+  "footer.dest.mahabaleshwar": "गोवा",
   "footer.social.whatsapp": "WhatsApp",
   "footer.social.instagram": "इंस्टाग्राम",
   "footer.social.facebook": "फेसबुक",
@@ -112,12 +112,12 @@ export const mr: Record<MessageKey, string> = {
 
   "homeCta.title": "तुमची पुढची राइड एक शोधात",
   "homeCta.body":
-    "पुणे ते मुंबई, नाशिक, गोवा आणि पुढे. व्यावसायिक ड्रायव्हर्स, स्पष्ट भाडे, 24×7 सहाय्य.",
+    "कोल्हापूर ते मुंबई, पुणे, बेळगाव, सोलापूर आणि गोवा. व्यावसायिक ड्रायव्हर्स, स्पष्ट भाडे, 24×7 सहाय्य.",
   "homeCta.book": "आता राइड बुक करा",
   "homeCta.howItWorks": "हे कसे काम करते",
 
   "routes.eyebrow": "लोकप्रिय मार्ग",
-  "routes.title": "पुण्याहून आता राइड बुक करा",
+  "routes.title": "कोल्हापूरहून राइड बुक करा",
   "routes.fleet": "हॅचबॅक ते इनोव्हा",
   "routes.bookWhatsApp": "WhatsApp वर बुक करा",
   "routes.meta.route": "रुट",
@@ -183,6 +183,7 @@ export const mr: Record<MessageKey, string> = {
   "bookForm.error.phone": "वैध 10 अंकी मोबाइल नंबर लिहा.",
   "bookForm.error.pickup": "पिकअप स्थळ लिहा.",
   "bookForm.error.drop": "ड्रॉप स्थळ लिहा.",
+  "bookForm.error.route": "यादीतून पिकअप आणि ड्रॉप निवडा.",
   "bookForm.error.date": "प्रवासाची तारीख निवडा.",
   "bookForm.error.passengers": "प्रवासी 1 ते 150 दरम्यान असावेत.",
 
@@ -422,7 +423,7 @@ export const mr: Record<MessageKey, string> = {
 
   "services.cta.title": "रस्त्यासाठी तयार?",
   "services.cta.desc":
-    "रुट शोधा, कॅब निवडा आणि मंगलमूर्ती टूर्स अँड ट्रॅव्हल्ससोबत प्रवास करा — पुणे ते मुंबई, नाशिक, गोवा आणि पुढे.",
+    "रुट शोधा, कॅब निवडा आणि मंगलमूर्ती टूर्स अँड ट्रॅव्हल्ससोबत प्रवास करा — कोल्हापूर, मुंबई, पुणे, बेळगाव, सोलापूर आणि गोवा.",
 
   "route.fleetRange": "हॅचबॅक ते Innova",
   "route.bookThis": "हा रुट बुक करा →",

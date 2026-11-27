@@ -6,7 +6,7 @@ export const site = {
   phoneHref: "tel:+919595933899",
   email: "mangalmurtirentcabservice@gmail.com",
   emailHref: "mailto:mangalmurtirentcabservice@gmail.com",
-  instagram: "https://www.instagram.com/mangalmurticab",
+  instagram: "#",
   address: "Kalamba, Kolhapur, Maharashtra, 416007",
   addressLine: "Kalamba, Kolhapur",
   city: "Kolhapur, Maharashtra",

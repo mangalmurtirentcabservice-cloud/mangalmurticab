@@ -30,14 +30,14 @@ export const hi: Record<MessageKey, string> = {
   "footer.col.about": "हमारे बारे में",
   "footer.terms": "नियम और शर्तें",
   "footer.copyright": "© 2026 मंगलमूर्ति टूर्स एंड ट्रैवल्स",
-  "footer.route.mumbaiPune": "कोल्हापुर → पुणे",
-  "footer.route.nashikPune": "कोल्हापुर → मुंबई",
-  "footer.route.puneGoa": "पुणे → गोवा",
-  "footer.route.puneLonavala": "पुणे → लोनावला",
-  "footer.dest.pune": "पुणे",
+  "footer.route.mumbaiPune": "कोल्हापुर → मुंबई",
+  "footer.route.nashikPune": "कोल्हापुर → पुणे",
+  "footer.route.puneGoa": "कोल्हापुर → गोवा",
+  "footer.route.puneLonavala": "पुणे → मुंबई",
+  "footer.dest.pune": "कोल्हापुर",
   "footer.dest.mumbai": "मुंबई",
-  "footer.dest.nashik": "नाशिक",
-  "footer.dest.mahabaleshwar": "महाबलेश्वर",
+  "footer.dest.nashik": "बेलगाव",
+  "footer.dest.mahabaleshwar": "गोवा",
   "footer.social.whatsapp": "WhatsApp",
   "footer.social.instagram": "इंस्टाग्राम",
   "footer.social.facebook": "फेसबुक",
@@ -112,12 +112,12 @@ export const hi: Record<MessageKey, string> = {
 
   "homeCta.title": "आपकी अगली राइड एक सर्च दूर है",
   "homeCta.body":
-    "पुणे से मुंबई, नासिक, गोवा और आगे। पेशेवर ड्राइवर, स्पष्ट किराया, 24×7 सहायता।",
+    "कोल्हापुर से मुंबई, पुणे, बेलगाव, सोलापुर और गोवा। पेशेवर ड्राइवर, स्पष्ट किराया, 24×7 सहायता।",
   "homeCta.book": "अभी राइड बुक करें",
   "homeCta.howItWorks": "यह कैसे काम करता है",
 
   "routes.eyebrow": "लोकप्रिय रूट",
-  "routes.title": "पुणे से अभी राइड बुक करें",
+  "routes.title": "कोल्हापुर से राइड बुक करें",
   "routes.fleet": "हैचबैक से इनोवा",
   "routes.bookWhatsApp": "WhatsApp पर बुक करें",
   "routes.meta.route": "रूट",
@@ -183,6 +183,7 @@ export const hi: Record<MessageKey, string> = {
   "bookForm.error.phone": "मान्य 10 अंकों का मोबाइल नंबर लिखें।",
   "bookForm.error.pickup": "पिकअप स्थान लिखें।",
   "bookForm.error.drop": "ड्रॉप स्थान लिखें।",
+  "bookForm.error.route": "सूची में से पिकअप और ड्रॉप चुनें।",
   "bookForm.error.date": "यात्रा की तारीख चुनें।",
   "bookForm.error.passengers": "यात्री 1 से 150 के बीच होने चाहिए।",
 
@@ -422,7 +423,7 @@ export const hi: Record<MessageKey, string> = {
 
   "services.cta.title": "सड़क के लिए तैयार?",
   "services.cta.desc":
-    "रूट खोजें, कैब चुनें, और मंगलमूर्ति टूर्स एंड ट्रैवल्स के साथ यात्रा करें — पुणे से मुंबई, नासिक, गोवा और आगे।",
+    "रूट खोजें, कैब चुनें, और मंगलमूर्ति टूर्स एंड ट्रैवल्स के साथ यात्रा करें — कोल्हापुर, मुंबई, पुणे, बेलगाव, सोलापुर और गोवा।",
 
   "route.fleetRange": "हैचबैक से Innova तक",
   "route.bookThis": "यह रूट बुक करें →",

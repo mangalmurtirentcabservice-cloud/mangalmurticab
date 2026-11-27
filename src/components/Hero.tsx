@@ -50,26 +50,16 @@ export default function Hero() {
             >
               {t("hero.subtitle")}
             </p>
-            <p
-              className={clsx(
-                "mt-2.5 max-w-lg text-navy/65",
-                isDevanagari
-                  ? "text-[15px] leading-relaxed sm:text-base"
-                  : "text-[15px] leading-relaxed sm:text-base"
-              )}
-            >
-              {t("hero.body")}
-            </p>
           </div>
 
           <div className="order-2 w-full min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
             <BookCabForm variant="compact" />
           </div>
 
-          <div className="relative order-3 mx-auto w-full max-w-xl lg:col-start-1 lg:mx-0 lg:mt-2">
+          <div className="relative order-3 mx-auto w-full max-w-xl lg:col-start-1 lg:mx-0 lg:-mt-1">
             <div className="absolute -left-4 top-6 -z-10 h-24 w-24 rounded-full bg-brand/25 blur-2xl" />
             <div className="overflow-hidden rounded-[1.4rem] bg-[#1c140e] shadow-[0_22px_44px_-28px_rgba(28,20,14,0.65)] ring-4 ring-white">
-              <div className="relative aspect-[16/8] max-h-52 sm:max-h-60">
+              <div className="relative h-52 w-full sm:h-60">
                 <Image
                   src={poster}
                   alt=""

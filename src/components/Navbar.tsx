@@ -75,7 +75,7 @@ export default function Navbar() {
         scrolled && "shadow-[0_4px_20px_-12px_rgba(26,10,12,0.12)]"
       )}
     >
-      <Container className="grid h-[4.25rem] min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 sm:h-[4.75rem] sm:gap-2.5 xl:gap-3">
+      <Container className="grid h-[4.25rem] min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 sm:h-[4.75rem] sm:gap-2.5 xl:max-w-[88rem] xl:gap-6">
         <Link
           href="/"
           className="relative z-10 flex shrink-0 items-center justify-self-start"
@@ -169,8 +169,8 @@ export default function Navbar() {
             aria-label={`${t("nav.call")} ${site.phone}`}
           >
             <Phone className="h-3.5 w-3.5 text-brand" strokeWidth={2.25} />
-            <span className="hidden xl:inline">{site.phone}</span>
-            <span className="xl:hidden">{t("nav.call")}</span>
+            <span className="hidden 2xl:inline">{site.phone}</span>
+            <span className="2xl:hidden">{t("nav.call")}</span>
           </a>
           <Link
             href="/book"

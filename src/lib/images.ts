@@ -58,8 +58,8 @@ export const images = {
   logo: "/logo-mangalmurti.svg",
   /** Wordmark for the white navbar */
   logoNav: "/logo-mangalmurti.svg",
-  heroBg: "/mangalmurti-drive.jpg",
-  heroVideo: "/mangalmurti-drive.mp4",
+  heroBg: "/hero-car-drive.jpg",
+  heroVideo: "/hero-car-drive.mp4",
   film1: "/fleet/sedan.jpg",
   film2: "/fleet/innova-crysta.jpg",
   film3: "/fleet/fortuner.jpg",

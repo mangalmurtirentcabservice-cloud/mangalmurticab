@@ -19,7 +19,7 @@ export const site = {
   mapEmbed:
     "https://www.openstreetmap.org/export/embed.html?bbox=74.19%2C16.63%2C74.25%2C16.69&layer=mapnik&marker=16.6612%2C74.2209",
   /** Hero background video — optional env override for external CDN */
-  heroVideoUrl: process.env.NEXT_PUBLIC_HERO_VIDEO_URL ?? "/mangalmurti-drive.mp4",
+  heroVideoUrl: process.env.NEXT_PUBLIC_HERO_VIDEO_URL ?? "/hero-car-drive.mp4",
 };
 
 export function formatWhatsApp(digits: string) {
